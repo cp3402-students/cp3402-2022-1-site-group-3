@@ -8,39 +8,39 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Baizonn_Learning_Center
+ * @package Townsville_Jazz_Club
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses baizonn_learning_center_header_style()
+ * @uses underscores_header_style()
  */
-function baizonn_learning_center_custom_header_setup() {
+function underscores_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
 		apply_filters(
-			'baizonn_learning_center_custom_header_args',
+			'underscores_custom_header_args',
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'baizonn_learning_center_header_style',
+				'wp-head-callback'   => 'underscores_header_style',
 			)
 		)
 	);
 }
-add_action( 'after_setup_theme', 'baizonn_learning_center_custom_header_setup' );
+add_action( 'after_setup_theme', 'underscores_custom_header_setup' );
 
-if ( ! function_exists( 'baizonn_learning_center_header_style' ) ) :
+if ( ! function_exists( 'underscores_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see baizonn_learning_center_custom_header_setup().
+	 * @see underscores_custom_header_setup().
 	 */
-	function baizonn_learning_center_header_style() {
+	function underscores_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

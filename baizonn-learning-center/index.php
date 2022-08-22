@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Baizonn_Learning_Center
+ * @package Townsville_Jazz_Club
  */
 
 get_header();

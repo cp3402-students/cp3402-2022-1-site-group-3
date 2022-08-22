@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Baizonn_Learning_Center
+ * @package Townsville_Jazz_Club
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
