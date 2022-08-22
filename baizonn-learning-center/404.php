@@ -3,58 +3,41 @@
  * The template for displaying 404 pages (not found)
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package Townsville_Jazz_Club
+ * @todo MODIFY AS PER THEME
+ * @package education_center
  */
 
-get_header();
-?>
+$error_img = get_theme_mod( '404_image', get_template_directory_uri() . '/assets/img/404.png' );
 
-	<main id="primary" class="site-main">
+get_header(); ?>
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'underscores' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'underscores' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'underscores' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$underscores_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'underscores' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$underscores_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
-
-<?php
-get_footer();
+	<div class="content-area" id="primary">
+		<div class="container">
+			<main id="main" class="site-main">
+				<section class="error-404 not-found">
+					<figure class="m-0">
+						<img src="<?php echo esc_url( $error_img ); ?>">
+					</figure>
+					<header class="page-header">
+						<h1 class="page-title">
+							<?php esc_html_e( 'Sorry We Can`t Find That Page!', 'education-center' ); ?>
+						</h1>
+						<div class="subtitle">
+							<p><?php esc_html_e( 'The page you are looking for was moved, removed, renamed or never existed.', 'education-center' ); ?></p>
+						</div>
+						<div class="error404-search">
+							<?php get_search_form(); ?>
+						</div>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn-lg btn-primary"><?php esc_html_e( 'Take Me Home', 'education-center' ); ?></a>
+					</header><!-- .page-header -->
+				</section><!-- .error-404 -->
+			</main><!-- #main -->
+			<?php
+			/**
+			 * @see education_center_latest_posts
+			*/
+			do_action( 'education_center_latest_posts' ); ?>
+		</div>
+	</div><!-- #primary -->
+    
+<?php get_footer();

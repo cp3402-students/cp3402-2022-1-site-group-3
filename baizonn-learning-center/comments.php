@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Townsville_Jazz_Club
+ * @package education_center
  */
 
 /*
@@ -24,54 +24,40 @@ if ( post_password_required() ) {
 
 	<?php
 	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
-		?>
+	if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-			$underscores_comment_count = get_comments_number();
-			if ( '1' === $underscores_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'underscores' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+				printf( // WPCS: XSS OK.
+					/* translators: 1: comment count number. */
+					esc_html( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'education-center' ) ),
+					number_format_i18n( get_comments_number() )
 				);
-			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $underscores_comment_count, 'comments title', 'underscores' ) ),
-					number_format_i18n( $underscores_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			}
 			?>
 		</h2><!-- .comments-title -->
 
-		<?php the_comments_navigation(); ?>
-
 		<ol class="comment-list">
 			<?php
-			wp_list_comments(
-				array(
+				wp_list_comments( array(
 					'style'      => 'ol',
 					'short_ping' => true,
-				)
-			);
+                    'callback'   => 'education_center_theme_comment',
+                    'avatar_size' => 80,
+				) );
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php
-		the_comments_navigation();
+		<?php the_comments_navigation();
 
 		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'underscores' ); ?></p>
-			<?php
+		if ( ! comments_open() ) : ?>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'education-center' ); ?></p>
+		<?php
 		endif;
 
 	endif; // Check for have_comments().
-
+	
 	comment_form();
-	?>
+	
+?>
 
 </div><!-- #comments -->

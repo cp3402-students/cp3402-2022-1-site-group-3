@@ -4,14 +4,16 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Townsville_Jazz_Club
+ * @package education_center
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+$sidebar = education_center_sidebar();
+
+if ( $sidebar == 'full-width' ){
 	return;
 }
 ?>
 
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+<aside id="secondary" class="widget-area" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
+	<?php dynamic_sidebar( 'sidebar' ); ?>
 </aside><!-- #secondary -->

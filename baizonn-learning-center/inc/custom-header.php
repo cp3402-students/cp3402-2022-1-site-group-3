@@ -4,43 +4,54 @@
  *
  * You can add an optional custom header image to header.php like so ...
  *
-	<?php the_header_image_tag(); ?>
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Townsville_Jazz_Club
+ * @package education_center
  */
 
-/**
- * Set up the WordPress core custom header feature.
- *
- * @uses underscores_header_style()
- */
-function underscores_custom_header_setup() {
-	add_theme_support(
-		'custom-header',
-		apply_filters(
-			'underscores_custom_header_args',
-			array(
-				'default-image'      => '',
-				'default-text-color' => '000000',
-				'width'              => 1000,
-				'height'             => 250,
-				'flex-height'        => true,
-				'wp-head-callback'   => 'underscores_header_style',
+if( ! function_exists( 'education_center_custom_header_setup' ) ) :
+	/**
+	 * Set up the WordPress core custom header feature.
+	 *
+	 * @uses education_center_header_style()
+	 */
+	function education_center_custom_header_setup() {
+		add_theme_support(
+			'custom-header',
+			apply_filters(
+				'education_center_custom_header_args',
+				array(
+					'default-image'      => get_template_directory_uri() . '/assets/img/banner.jpg',
+					'default-text-color' => '#000000',
+					'width'              => 1920,
+					'height'             => 760,
+					'flex-height'        => true,
+					'video'         	 => true,
+					'wp-head-callback'   => 'education_center_header_style',
+				)
 			)
-		)
-	);
-}
-add_action( 'after_setup_theme', 'underscores_custom_header_setup' );
+		);
 
-if ( ! function_exists( 'underscores_header_style' ) ) :
+		register_default_headers( array(
+			'default-image' => array(
+				'url'           => '%s/assets/img/banner.jpg',
+				'thumbnail_url' => '%s/assets/img/banner.jpg',
+				'description'   => __( 'Default Header Image', 'education-center' ),
+			),
+		) );
+
+	}
+endif;
+add_action( 'after_setup_theme', 'education_center_custom_header_setup' );
+
+if ( ! function_exists( 'education_center_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see underscores_custom_header_setup().
+	 * @see education_center_custom_header_setup().
 	 */
-	function underscores_header_style() {
+	function education_center_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

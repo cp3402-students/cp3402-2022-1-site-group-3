@@ -4,50 +4,45 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Townsville_Jazz_Club
+ * @package education_center
  */
 
-get_header();
-?>
+get_header(); ?>
 
-	<main id="primary" class="site-main">
+	<div class="content-area" id="primary">
+		<div class="container">
+			<div class="page-grid">
+				<div id="main" class="site-main">
+					<div class="grid-layout-wrap layout-col-2">                                                          
+						<div class="row">
+							<?php
+							if ( have_posts() ) : 
+							
+								/* Start the Loop */
+								while ( have_posts() ) : the_post();
 
-		<?php if ( have_posts() ) : ?>
+									/**
+									 * Run the loop for the search to output the results.
+									 * If you want to overload this in a child theme then include a file
+									 * called content-search.php and that will be used instead.
+									 */
+									get_template_part( 'template-parts/content', 'search' );
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'underscores' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
+								endwhile;
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+							else :
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+								get_template_part( 'template-parts/content', 'none' );
 
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
+							endif; ?>
+						</div>
+						<?php education_center_navigation(); ?>
+					</div>
+				</div>
+				<?php get_sidebar(); ?>
+			</div>
+		</div>
+	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

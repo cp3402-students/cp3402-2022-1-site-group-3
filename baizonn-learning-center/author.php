@@ -1,21 +1,17 @@
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
+ * The template for displaying archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Education_Center
+ * @package education_center
  */
 
 get_header(); ?>
 
 	<div class="content-area" id="primary">
         <div class="container">
+			<?php education_center_author_box(); ?>
 			<div class="page-grid">
 				<div id="main" class="site-main">
 					<div class="grid-layout-wrap layout-col-2">
@@ -41,8 +37,8 @@ get_header(); ?>
 
 							endif; ?>	
 						</div>
-						<?php education_center_navigation(); ?>
 					</div>
+					<?php education_center_navigation(); ?>
 				</div>
 				<?php get_sidebar(); ?>
 			</div>
