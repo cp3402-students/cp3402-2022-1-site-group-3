@@ -27,7 +27,7 @@
         <?php 
             the_content(); 
             wp_link_pages( array(
-                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'education-center' ),
+                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'baizonn-learning-center' ),
                 'after'  => '</div>',
             ) );
         ?>
@@ -35,5 +35,5 @@
     <div class="social-wrap">
         <?php echo get_the_tag_list( '<div class="tag-list"><ul>', ' ', '</ul></div>' ); ?>
     </div>
-    <?php education_center_author_box(); ?>
+    <?php baizonn_learning_center_author_box(); ?>
 </article>
