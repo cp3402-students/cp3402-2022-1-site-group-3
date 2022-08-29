@@ -24,7 +24,7 @@
 - We pushed our commits to github via github desktop, we kept our repository up-to date by making changes to our files that we uploaded. 
 
 **Web Hosting:**
-- The Production Site Used : epizy
+- The Production Site Used : https://baizonnlearningcenter.epizy.com/wordpress/
 - 
 
 **Project Management:**
