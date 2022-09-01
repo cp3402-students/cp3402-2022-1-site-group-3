@@ -5,7 +5,7 @@
 - Course: CP3402 SP52 2022
 - Members: Hein Htet Ko, James Makarios, Tuan Dat Tran & Hoai Thanh Pham
 
-**Theme Development**
+**Theme Development** <br>
 ***PhpStorm(https://www.jetbrains.com/phpstorm/)*** 
 - Major frameworks support : Working with frameworks like Symfony, Laravel, Drupal, WordPress, Zend Framework, Magento, Joomla!, CakePHP, and Yii is made easy using PhpStorm.
 
