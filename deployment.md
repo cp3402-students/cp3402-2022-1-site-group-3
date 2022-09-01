@@ -25,11 +25,10 @@
 
 **Web Hosting:**
 - The Production Site Used : https://baizonnlearningcenter.epizy.com/wordpress/
-- The Web Hosting Used : https://www.infinityfree.net/
+- The Web Hosting Used : https://www.infinityfree.net/ <br>
 Infinityfree : It offers free web hosting with impressive marketing of unlimited disk space, bandwidth, and domain hosting. This, in theory, means you can host as many files as you want on your account server, have as many users visit your site as you want, and have as many primary web addresses as you want.
 
 **Project Management:**
-- ~[Github](https://github.com/cp3402-students/cp3402-2022-1-site-group-3)
 - ~[Github](https://github.com/cp3402-students/cp3402-2022-1-env-group-3)
 Github: Developers frequently utilize the Github platform to create, distribute, and manage software, code, applications, and more. In this project, we made extensive use of Github to host a repository for all of our code and materials and to keep meticulous track of the changes we made. The website for github is https://github.com, and the repository for this project is located at https://github.com/cp3402-students/cp3402-2022-1-site-group-3.
 
