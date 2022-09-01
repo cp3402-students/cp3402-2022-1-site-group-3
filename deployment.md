@@ -36,7 +36,14 @@
 **Web Hosting:**
 - The Production Site Used : https://baizonnlearningcenter.epizy.com/wordpress/
 - The Web Hosting Used : https://www.infinityfree.net/ <br>
-Infinityfree : It offers free web hosting with impressive marketing of unlimited disk space, bandwidth, and domain hosting. This, in theory, means you can host as many files as you want on your account server, have as many users visit your site as you want, and have as many primary web addresses as you want. Infinity Free offers three shared hosting (opens in new tab) plans only, one of which is completely free-of-charge. It is titled “Infinity Free'' and it should include unlimited disk space, unlimited bandwidth (although it is limited to 50,000 daily hits), and unlimited hosting domains. It also supports 400 MySQL databases, a single FTP account, but not a single email account, and all of the above is granted with “limited server power”. Despite these limitations, at least the plan includes a free subdomain, free SSL certificates (opens in new tab) for all your domains, and a Softaculous auto-installer with over 400 handy apps.
+Infinityfree : It offers free web hosting with impressive marketing of unlimited disk space, bandwidth, and domain hosting. This, in theory, means you can host as many files as you want on your account server, have as many users visit your site as you want, and have as many primary web addresses as you want. Infinity Free offers three shared hosting (opens in new tab) plans only, one of which is completely free-of-charge. It is titled “Infinity Free''.  
+- Unlimited disk space
+- Unlimited bandwidth
+- Unlimited hosting domains
+- Supports 400 MySQL databases
+- Free subdomains
+- An autoinstaller with more than 400 different applications, including WordPress
+- Knowledgebase support
 
 **Project Management:**
 - ~[Github](https://github.com/cp3402-students/cp3402-2022-1-env-group-3) <br>
